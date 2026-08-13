@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 collections:
   - name: "posts"
@@ -12,8 +12,14 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Categoría", name: "category", widget: "select", options: ["Inmobiliario", "Civil", "Administrativo", "Doctrina"] }
-      - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Resumen", name: "summary", widget: "text" }
-      - { label: "Cuerpo del Artículo", name: "body", widget: "markdown" }
+      - { label: "Título del Artículo", name: "title", widget: "string" }
+      - { label: "Fecha de Publicación", name: "date", widget: "datetime" }
+      - { 
+          label: "Materia / Categoría", 
+          name: "category", 
+          widget: "select", 
+          options: ["inmobiliario", "civil", "constitucional", "laboral", "otros"],
+          default: "inmobiliario"
+        }
+      - { label: "Resumen Breve", name: "summary", widget: "text", help: "Un breve párrafo que aparecerá en la tarjeta de la página principal" }
+      - { label: "Contenido del Artículo", name: "body", widget: "markdown" }
