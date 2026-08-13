@@ -1,12 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel de Administración</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derecho & Criterio | Publicaciones Jurídicas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #b08d46;
+            --border-color: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--accent-gold); }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-panel {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .hero {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            padding: 3rem 2rem 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container { max-width: 800px; margin: 0 auto; }
+
+        .hero-tag {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p { color: #94a3b8; font-size: 1.1rem; font-weight: 300; }
+
+        main {
+            max-width: 1100px;
+            margin: -2.5rem auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+        }
+
+        .date { font-size: 0.8rem; color: var(--text-muted); }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .card-summary {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: #64748b;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #1e293b;
+            font-size: 0.9rem;
+        }
+
+        footer a { color: #94a3b8; text-decoration: none; }
+    </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Derecho <span>&</span> Criterio</a>
+            <nav class="nav-links">
+                <a href="#" class="nav-link">Artículos</a>
+                <a href="/admin/" class="btn-panel">Panel Editor</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <span class="hero-tag">Análisis Legal & Doctrina</span>
+            <h1>Publicaciones y Criterios Jurídicos</h1>
+            <p>Espacio dedicado al estudio, interpretación y análisis crítico del derecho inmobiliario, civil y administrativo.</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="articles-grid" id="posts-container">
+            <!-- Los artículos publicados aparecerán aquí automáticamente -->
+        </div>
+    </main>
+
+    <footer>
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Publicaciones Jurídicas. Todos los derechos reservados.</p>
+            <a href="/admin/">Acceso Redactor</a>
+        </div>
+    </footer>
+
+    <script>
+        async function loadPosts() {
+            const container = document.getElementById('posts-container');
+            try {
+                // Obtener lista de archivos en _posts usando la API de GitHub
+                const response = await fetch('https://api.github.com/repos/goessenssocrates-art/mi-blog-juridico/contents/_posts');
+                const files = await response.json();
+                
+                if (!Array.isArray(files)) return;
+
+                container.innerHTML = ''; // Limpiar contenedor
+
+                for (const file of files) {
+                    if (file.name.endsWith('.md')) {
+                        const res = await fetch(file.download_url);
+                        const content = await res.text();
+                        
+                        // Extraer metadatos basicos
+                        const titleMatch = content.match(/title:\s*["']?(.*?)["']?\n/);
+                        const categoryMatch = content.match(/category:\s*["']?(.*?)["']?\n/);
+                        const dateMatch = content.match(/date:\s*["']?(.*?)["']?\n/);
+                        const summaryMatch = content.match(/summary:\s*["']?(.*?)["']?\n/);
+
+                        const title = titleMatch ? titleMatch[1] : file.name;
+                        const category = categoryMatch ? categoryMatch[1] : 'Doctrina';
+                        const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+                        const summary = summaryMatch ? summaryMatch[1] : '';
+
+                        const cardHtml = `
+                            <article class="article-card">
+                                <div>
+                                    <div class="card-header">
+                                        <span class="badge">${category}</span>
+                                        <span class="date">${date}</span>
+                                    </div>
+                                    <h2 class="card-title">${title}</h2>
+                                    <p class="card-summary">${summary}</p>
+                                </div>
+                            </article>
+                        `;
+                        container.innerHTML += cardHtml;
+                    }
+                }
+            } catch (err) {
+                console.error("Error al cargar publicaciones:", err);
+            }
+        }
+
+        loadPosts();
+    </script>
 </body>
 </html>
