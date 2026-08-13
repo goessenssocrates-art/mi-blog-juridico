@@ -1,1 +1,1 @@
-_posts/README.md
+Carpeta para almacenar las publicaciones jurídicas.
