@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derecho & Criterio | Publicaciones Jurídicas</title>
+    <title>Derecho & Criterio | Socrates Wim Goessens Zapata</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
@@ -30,16 +30,21 @@
         header {
             background-color: var(--bg-dark);
             color: #ffffff;
-            padding: 2.5rem 2rem;
+            padding: 1.5rem 2rem;
             border-bottom: 3px solid var(--accent-gold);
         }
 
         .header-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo {
@@ -48,10 +53,20 @@
             font-weight: 700;
             color: #ffffff;
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
         .logo span { color: var(--accent-gold); }
+
+        .author-badge {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 0.2rem;
+        }
+
+        .author-badge a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
 
         .btn-panel {
             background-color: var(--accent-gold);
@@ -74,96 +89,87 @@
         .hero {
             background-color: var(--bg-dark);
             color: #ffffff;
-            padding: 3rem 2rem 6rem 2rem;
+            padding: 3rem 2rem 5rem 2rem;
             text-align: center;
         }
 
-        .hero-container { max-width: 800px; margin: 0 auto; }
+        .hero-container { max-width: 850px; margin: 0 auto; }
 
-        .hero-tag {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+        .legal-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
             color: var(--accent-gold);
-            font-weight: 600;
             margin-bottom: 1rem;
-            display: block;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             line-height: 1.2;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
-        .hero p { color: #94a3b8; font-size: 1.1rem; font-weight: 300; }
+        .hero p { color: #94a3b8; font-size: 1.05rem; font-weight: 300; }
 
-        /* MAIN & CATEGORIES */
+        /* MAIN CONTENT - SECCIONES POR MATERIA */
         main {
-            max-width: 1100px;
-            margin: -3rem auto 4rem auto;
+            max-width: 1200px;
+            margin: -2.5rem auto 4rem auto;
             padding: 0 1.5rem;
         }
 
-        .categories-nav {
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .cat-btn {
+        .materia-section {
             background: #ffffff;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.6rem 1.3rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
         }
 
-        .cat-btn:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        .cat-btn.active {
-            background: var(--accent-gold);
+        .materia-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
             color: var(--bg-dark);
-            border-color: var(--accent-gold);
-            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* GRID ARTICLES */
+        .materia-title span {
+            font-size: 0.85rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .article-card {
-            background: var(--bg-card);
-            border-radius: 10px;
+            background: #f8fafc;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeIn 0.4s ease forwards;
+            transition: all 0.3s ease;
         }
 
         .article-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
             border-color: var(--accent-gold);
         }
 
@@ -171,46 +177,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--accent-gold);
+            margin-bottom: 0.8rem;
         }
 
         .date { font-size: 0.8rem; color: var(--text-muted); }
 
         .card-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--text-main);
             line-height: 1.3;
         }
 
         .card-summary {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-footer {
-            border-top: 1px solid #f1f5f9;
-            padding-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .read-more {
             color: var(--accent-gold);
             font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .empty-msg {
+            color: var(--text-muted);
             font-size: 0.9rem;
+            font-style: italic;
         }
 
         /* MODAL ARTICLE VIEW */
@@ -227,7 +223,6 @@
             align-items: center;
             z-index: 1000;
             padding: 1.5rem;
-            animation: fadeIn 0.3s ease;
         }
 
         .modal-container {
@@ -281,12 +276,6 @@
         footer a { color: #94a3b8; text-decoration: none; }
         footer a:hover { color: var(--accent-gold); }
 
-        /* ANIMATIONS */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -297,7 +286,13 @@
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Derecho <span>&</span> Criterio</a>
+            <div class="logo-group">
+                <a href="#" class="logo">Derecho <span>&</span> Criterio</a>
+                <div class="author-badge">
+                    Por <strong>Socrates Wim Goessens Zapata</strong> | 
+                    <a href="mailto:goessenssocrates@gmail.com">goessenssocrates@gmail.com</a>
+                </div>
+            </div>
             <nav>
                 <a href="/admin/" class="btn-panel">Panel Editor</a>
             </nav>
@@ -306,27 +301,52 @@
 
     <section class="hero">
         <div class="hero-container">
-            <span class="hero-tag">Análisis Legal & Doctrina</span>
+            <p class="legal-quote">“Iustitia est constans et perpetua voluntas ius suum cuique tribuendi”</p>
             <h1>Publicaciones y Criterios Jurídicos</h1>
-            <p>Espacio dedicado al estudio, interpretación y análisis crítico del derecho inmobiliario, civil, constitucional y laboral.</p>
+            <p>Espacio de análisis, doctrina e interpretación del derecho clasificado por materia legal.</p>
         </div>
     </section>
 
     <main>
-        <!-- FILTROS POR MATERIA -->
-        <div class="categories-nav">
-            <button class="cat-btn active" onclick="filterPosts('todos', this)">Todos</button>
-            <button class="cat-btn" onclick="filterPosts('constitucional', this)">Constitucional</button>
-            <button class="cat-btn" onclick="filterPosts('inmobiliario', this)">Inmobiliario</button>
-            <button class="cat-btn" onclick="filterPosts('civil', this)">Civil</button>
-            <button class="cat-btn" onclick="filterPosts('laboral', this)">Laboral</button>
-            <button class="cat-btn" onclick="filterPosts('otros', this)">Otros</button>
-        </div>
+        <!-- SECCIÓN 1: INMOBILIARIO -->
+        <section class="materia-section">
+            <h2 class="materia-title">Derecho Inmobiliario <span>Análisis & Regularización de Terrenos</span></h2>
+            <div class="articles-grid" id="grid-inmobiliario">
+                <p class="empty-msg">No hay publicaciones en esta materia aún.</p>
+            </div>
+        </section>
 
-        <!-- REJILLA DE ARTÍCULOS -->
-        <div class="articles-grid" id="posts-container">
-            <!-- Los artículos cargan dinámicamente aquí -->
-        </div>
+        <!-- SECCIÓN 2: CIVIL -->
+        <section class="materia-section">
+            <h2 class="materia-title">Derecho Civil <span>Doctrina, Obligaciones & Contratos</span></h2>
+            <div class="articles-grid" id="grid-civil">
+                <p class="empty-msg">No hay publicaciones en esta materia aún.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CONSTITUCIONAL -->
+        <section class="materia-section">
+            <h2 class="materia-title">Derecho Constitucional <span>Garantías & Jurisprudencia</span></h2>
+            <div class="articles-grid" id="grid-constitucional">
+                <p class="empty-msg">No hay publicaciones en esta materia aún.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: LABORAL -->
+        <section class="materia-section">
+            <h2 class="materia-title">Derecho Laboral <span>Relaciones de Trabajo & Normativa</span></h2>
+            <div class="articles-grid" id="grid-laboral">
+                <p class="empty-msg">No hay publicaciones en esta materia aún.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: OTROS -->
+        <section class="materia-section">
+            <h2 class="materia-title">Otras Materias <span>Administrativo, Tributario & Misceláneos</span></h2>
+            <div class="articles-grid" id="grid-otros">
+                <p class="empty-msg">No hay publicaciones en esta sección aún.</p>
+            </div>
+        </section>
     </main>
 
     <!-- VENTANA MODAL PARA LECTURA DE ARTÍCULO COMPLETO -->
@@ -335,8 +355,7 @@
             <button class="modal-close" onclick="closeModalDirect()">&times;</button>
             <div class="modal-header">
                 <div>
-                    <span class="badge" id="modal-category"></span>
-                    <span class="date" id="modal-date" style="margin-left: 1rem;"></span>
+                    <span class="date" id="modal-date"></span>
                 </div>
                 <h1 class="modal-title" id="modal-title"></h1>
             </div>
@@ -345,8 +364,8 @@
     </div>
 
     <footer>
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <p>&copy; 2026 Publicaciones Jurídicas. Todos los derechos reservados.</p>
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Socrates Wim Goessens Zapata. Todos los derechos reservados.</p>
             <a href="/admin/">Acceso Redactor</a>
         </div>
     </footer>
@@ -355,7 +374,6 @@
         let allPosts = [];
 
         async function loadPosts() {
-            const container = document.getElementById('posts-container');
             try {
                 const response = await fetch('https://api.github.com/repos/goessenssocrates-art/mi-blog-juridico/contents/_posts');
                 const files = await response.json();
@@ -374,12 +392,11 @@
                         const dateMatch = content.match(/date:\s*["']?(.*?)["']?\n/);
                         const summaryMatch = content.match(/summary:\s*["']?(.*?)["']?\n/);
 
-                        // Separar metadatos del cuerpo Markdown
                         const bodyContent = content.replace(/^---[\s\S]*?---/, '').trim();
 
                         allPosts.push({
                             title: titleMatch ? titleMatch[1] : file.name,
-                            category: categoryMatch ? categoryMatch[1] : 'Otros',
+                            category: categoryMatch ? categoryMatch[1].toLowerCase() : 'otros',
                             date: dateMatch ? new Date(dateMatch[1]).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }) : '',
                             summary: summaryMatch ? summaryMatch[1] : '',
                             body: bodyContent
@@ -387,56 +404,45 @@
                     }
                 }
 
-                renderPosts(allPosts);
+                organizePostsByMateria();
             } catch (err) {
                 console.error("Error al cargar publicaciones:", err);
             }
         }
 
-        function renderPosts(posts) {
-            const container = document.getElementById('posts-container');
-            container.innerHTML = '';
+        function organizePostsByMateria() {
+            const categories = ['inmobiliario', 'civil', 'constitucional', 'laboral', 'otros'];
+            
+            categories.forEach(cat => {
+                const grid = document.getElementById(`grid-${cat}`);
+                const postsCat = allPosts.filter(p => p.category.includes(cat) || (cat === 'otros' && !categories.some(c => p.category.includes(c))));
 
-            if (posts.length === 0) {
-                container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 3rem;">No hay publicaciones en esta materia por el momento.</p>`;
-                return;
-            }
-
-            posts.forEach((post, index) => {
-                const cardHtml = `
-                    <article class="article-card" onclick="openModal(${index})">
-                        <div>
-                            <div class="card-header">
-                                <span class="badge">${post.category}</span>
-                                <span class="date">${post.date}</span>
-                            </div>
-                            <h2 class="card-title">${post.title}</h2>
-                            <p class="card-summary">${post.summary}</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="read-more">Leer análisis completo &rarr;</span>
-                        </div>
-                    </article>
-                `;
-                container.innerHTML += cardHtml;
+                if (postsCat.length > 0) {
+                    grid.innerHTML = '';
+                    postsCat.forEach(post => {
+                        const index = allPosts.indexOf(post);
+                        const cardHtml = `
+                            <article class="article-card" onclick="openModal(${index})">
+                                <div>
+                                    <div class="card-header">
+                                        <span class="date">${post.date}</span>
+                                    </div>
+                                    <h3 class="card-title">${post.title}</h3>
+                                    <p class="card-summary">${post.summary}</p>
+                                </div>
+                                <div>
+                                    <span class="read-more">Leer análisis completo &rarr;</span>
+                                </div>
+                            </article>
+                        `;
+                        grid.innerHTML += cardHtml;
+                    });
+                }
             });
-        }
-
-        function filterPosts(category, btnElement) {
-            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            if (category === 'todos') {
-                renderPosts(allPosts);
-            } else {
-                const filtered = allPosts.filter(p => p.category.toLowerCase() === category.toLowerCase());
-                renderPosts(filtered);
-            }
         }
 
         function openModal(index) {
             const post = allPosts[index];
-            document.getElementById('modal-category').innerText = post.category;
             document.getElementById('modal-date').innerText = post.date;
             document.getElementById('modal-title').innerText = post.title;
             document.getElementById('modal-body').innerHTML = marked.parse(post.body);
