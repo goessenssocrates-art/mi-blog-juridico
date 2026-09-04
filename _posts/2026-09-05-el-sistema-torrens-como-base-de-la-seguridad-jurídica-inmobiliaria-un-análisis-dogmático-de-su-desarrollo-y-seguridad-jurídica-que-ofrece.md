@@ -52,7 +52,7 @@ Publicidad: dota al registro de fe pública de la información que en él consta
 
 Aspectos como la publicidad registral,  el tracto sucesivo, protección del tercer adquirente de buena fe - Principios que abordaremos a fondo en una próxima entrega-, son los que hacen del sistema Torrens, el más eficiente utilizado en el ámbito inmobiliario en nuestra legislación.
 
-**~~\----------------------------------------------------------------------------------------------------------------------------~~**
+**~~\-----------------------------------------------------------------~~**
 
 **Australia (Australia del Sur).** *Real Property Act 1858* (21 Vict. c. 15). *An Act to simplify the Laws relating to the transfer and encumbrance of freehold and other interests in Land*.
 
