@@ -1,12 +1,9 @@
 ---
-title: "El sistema Torrens como base de la seguridad jurídica inmobiliaria: un
-  análisis dogmático de su desarrollo, y seguridad jurídica que ofrece."
+title: El sistema Torrens como base de la seguridad jurídica inmobiliaria
 date: 2026-09-05T08:00:00.000-04:00
 category: inmobiliario
-summary: "El registro inmobiliario nace de una necesidad social de asegurar y
-  blindar las inversiones en nuestro país, más que dar a conocer la existencia
-  de un derecho, garantiza tu seguridad, siempre y cuando comprendas como
-  funciona, y de donde proviene. "
+summary: |
+  Análisis dogmático de su desarrollo, y seguridad jurídica que ofrece.
 ---
 1. **Antecedentes históricos del registro de la tierra.**
 
